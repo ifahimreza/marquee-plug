@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../dist/marquee-plug.min.css" />
+		<title>MarqueePlug Example</title>
+	</head>
+	<body>
+		<div class="logo-slider">
+			<div>MarqueePlug Example1</div>
+			<div>MarqueePlug Example2</div>
+			<div>MarqueePlug Example3</div>
+			<div>MarqueePlug Example4</div>
+		</div>
+
+		<script src="../dist/marquee-plug.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var marqueeContainer = document.querySelector('.logo-slider');
+
+				var marquee = new MarqueePlug(marqueeContainer, {
+					autoFill: true,
+					play: true,
+					pauseOnHover: true,
+					direction: 'left',
+					speed: 10,
+					gradient: true,
+					gradientColor:
+						'rgba(248, 251, 253, 1), rgba(248, 251, 253, 0)',
+					gradientWidth: '10%',
+				});
+			});
+		</script>
+	</body>
+</html>
