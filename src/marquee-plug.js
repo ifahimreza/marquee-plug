@@ -186,21 +186,8 @@ class MarqueePlug {
     if (!this.isMounted) return;
     this.marquee.innerHTML = ''; // Clear existing content
     this.marquee.appendChild(this.initialChildContainer); // Add initial container
-    this.marquee.appendChild(this.multiplyChildren(this.multiplier - 1)); // Append cloned children
-    this.marquee.appendChild(this.multiplyChildren(this.multiplier)); // Append cloned children again
-
-    // Add event listeners for the animation end and iteration
-    this.marquee.addEventListener('animationiteration', () => {
-      if (typeof this.options.onCycleComplete === 'function') {
-        this.options.onCycleComplete();
-      }
-    });
-
-    this.marquee.addEventListener('animationend', () => {
-      if (typeof this.options.onFinish === 'function') {
-        this.options.onFinish();
-      }
-    });
+    this.initialChildContainer.appendChild(this.multiplyChildren(this.multiplier - 1)); // Append cloned children
+    this.initialChildContainer.appendChild(this.multiplyChildren(this.multiplier)); // Append cloned children again
   }
 }
 
@@ -209,6 +196,3 @@ export default MarqueePlug;
 if (typeof window !== 'undefined') {
   window.MarqueePlug = MarqueePlug;
 }
-
-
-

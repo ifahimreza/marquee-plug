@@ -1,14 +1,11 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/marquee-plug.js',
   output: {
-    filename: 'marquee-plug.min.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'MarqueePlug',
+    filename: 'marquee-plug.min.js',
     libraryTarget: 'umd',
     globalObject: 'this',
   },
@@ -17,7 +14,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.scss$/,
@@ -27,28 +29,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'marquee-plug.min.css',
+      filename: 'marquee-plug.css',
     }),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          format: {
-            comments: false,
-          },
-        },
-        extractComments: false,
-      }),
-      new CssMinimizerPlugin(),
-    ],
-  },
-  devServer: {
-    static: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000,
-    hot: true,
-  },
   mode: 'production',
 };

@@ -3,39 +3,27 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../dist/marquee-plug.min.css" />
+		<link rel="stylesheet" href="../dist/marquee-plug.css" />
 		<title>MarqueePlug Example</title>
 	</head>
 	<body>
 		<div class="marquee-container">
-			<h1 class="demo-text">MarqueePlug Example</h1>
+			<h1 class="demo-text">MarqueePlug Example 1</h1>
+			<h1 class="demo-text">MarqueePlug Example 2</h1>
+			<h1 class="demo-text">MarqueePlug Example 3</h1>
+			<h1 class="demo-text">MarqueePlug Example 4</h1>
 		</div>
 
 		<script src="../dist/marquee-plug.min.js"></script>
 		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				var marqueeContainer =
-					document.querySelector('.marquee-container');
-
-				new MarqueePlug('.marquee-container', {
+			document.addEventListener('DOMContentLoaded', () => {
+				const container = document.querySelector('.marquee-container');
+				const marquee = new MarqueePlug(container, {
 					autoFill: true,
-					play: true,
-					pauseOnHover: true,
-					pauseOnClick: false,
-					direction: 'left',
-					speed: 20,
-					gradient: true,
-					gradientColor: 'white',
-					gradientWidth: '10%',
-					delay: 0,
-					loop: 0,
-					onFinish: () => console.log('Marquee finished.'),
-					onCycleComplete: () =>
-						console.log('Marquee cycle complete.'),
+					speed: 30,
 				});
 			});
 		</script>
-
 		<style>
 			.demo-text {
 				font-size: 30px;
