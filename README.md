@@ -16,21 +16,25 @@ MarqueePlug is an easy-to-use, customizable, and lightweight JavaScript library 
 
 To use MarqueePlug in your project, follow these steps:
 
-### Importing MarqueePlug
+### NPM
 
-You can install MarqueePlug using npm:
+The recommended installation method is NPM. Install the latest version with the following command:
 
-    ```bash
-    npm install marquee-plug
-    ```
+```bash
+$ npm install marquee-plug
+```
 
-    ```javascript
-    import MarqueePlug from 'marquee-plug';
-    ```
+### Hosting Files
 
-    ```html
-    <script src="marquee-plug.js"></script>
-    ```
+You can download the MarqueePlug package from the following link:
+
+Download
+
+Go to the dist directory, and import the marquee-plug.min.js file with the <script> tag:
+
+```js
+<script src="path-to-the-file/marquee-plug.min.js"></script>
+```
 
 ### Basic Example
 
@@ -38,24 +42,31 @@ Here's a basic example of how to use MarqueePlug:
 
 HTML: Add a container for the marquee effect.
 
-    ```html
-    <div id="marquee-container" class="marquee">
-        <p>Your scrolling text goes here.</p>
-        <p>Your scrolling text goes here.</p>
-    </div>
-    ```
+```html
+<div id="marquee-container" class="marquee">
+	<p>Your scrolling text goes here.</p>
+	<p>Your scrolling text goes here.</p>
+</div>
+```
 
-Initialize MarqueePlug on your elements.
+JavaScript: Initialize MarqueePlug on your elements.
 
-    ```javascript
-    const marquee = new MarqueePlug('#marquee-container', {
-    	autoFill: true, // Automatically fills the marquee with content
-    	speed: 50, // Speed of the marquee
-    	direction: 'left', // Direction of the marquee (left, right, up, down)
-    });
+```js
+const marquee = new MarqueePlug('#marquee-container', {
+	autoFill: true, // Automatically fills the marquee with content
+	speed: 50, // Speed of the marquee
+	direction: 'left', // Direction of the marquee (left, right, up, down)
+});
 
-    marquee.init();
-    ```
+marquee.init();
+```
+
+## Files
+
+You will find two files in the dist directory:
+
+-   marquee-plug.min.js
+-   marquee-plug.css
 
 ## Options
 
@@ -137,6 +148,10 @@ Initialize MarqueePlug on your elements.
 **Description**: A callback for when the marquee finishes a loop. Does not call if maximum loops are reached (use onFinish instead).
 **Default**: `null`
 **Example**: `onCycleComplete: () => { console.log('Marquee cycle complete'); }`
+
+```
+
+```
 
 ```
 
