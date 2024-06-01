@@ -1,5 +1,5 @@
 {
-  "name": "@fahimreza/marquee-plug",
+  "name": "marquee-plug",
   "version": "1.0.0",
   "description": "",
   "main": "src/marquee-plug.js",
