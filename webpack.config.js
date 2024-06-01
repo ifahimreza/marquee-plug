@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: 'marquee-plug.min.js',
     path: path.resolve(__dirname, 'dist'),
+    library: 'MarqueePlug',
     libraryTarget: 'umd',
     globalObject: 'this',
   },

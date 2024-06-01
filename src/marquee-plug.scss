@@ -1,4 +1,4 @@
-.mp-container {
+.marquee-plug {
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: row;
@@ -52,7 +52,7 @@
 	}
 }
 
-.mp-marquee {
+.mp-track {
 	flex: 0 0 auto;
 	min-width: var(--min-width);
 	z-index: 1;
@@ -74,15 +74,17 @@
 	}
 }
 
-.mp-child-container {
-	flex: 0 0 auto;
+.mp-list {
 	display: flex;
 	min-width: auto;
 	flex-direction: row;
 	align-items: center;
 	gap: 10px;
+	list-style-type: none;
 }
 
-.mp-child {
+.mp-item {
 	transform: var(--transform);
+	list-style-type: none !important;
+	cursor: pointer;
 }

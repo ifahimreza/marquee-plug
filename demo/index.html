@@ -7,30 +7,41 @@
 		<title>MarqueePlug Example</title>
 	</head>
 	<body>
-		<div class="logo-slider">
-			<div>MarqueePlug Example1</div>
-			<div>MarqueePlug Example2</div>
-			<div>MarqueePlug Example3</div>
-			<div>MarqueePlug Example4</div>
+		<div class="marquee-container">
+			<h1 class="demo-text">MarqueePlug Example</h1>
 		</div>
 
 		<script src="../dist/marquee-plug.min.js"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
-				var marqueeContainer = document.querySelector('.logo-slider');
+				var marqueeContainer =
+					document.querySelector('.marquee-container');
 
-				var marquee = new MarqueePlug(marqueeContainer, {
+				new MarqueePlug('.marquee-container', {
 					autoFill: true,
 					play: true,
 					pauseOnHover: true,
+					pauseOnClick: false,
 					direction: 'left',
-					speed: 10,
+					speed: 20,
 					gradient: true,
-					gradientColor:
-						'rgba(248, 251, 253, 1), rgba(248, 251, 253, 0)',
+					gradientColor: 'white',
 					gradientWidth: '10%',
+					delay: 0,
+					loop: 0,
+					onFinish: () => console.log('Marquee finished.'),
+					onCycleComplete: () =>
+						console.log('Marquee cycle complete.'),
 				});
 			});
 		</script>
+
+		<style>
+			.demo-text {
+				font-size: 30px;
+				margin: 0 10px;
+				white-space: nowrap;
+			}
+		</style>
 	</body>
 </html>
