@@ -3,6 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/marquee-plug.min.js",
+  "keywords": [
+    "marquee",
+    "javascript",
+    "library",
+    "plugin",
+    "scrolling",
+    "effect",
+    "animation",
+    "autoFill",
+    "speed",
+    "direction"
+  ],
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --open",
