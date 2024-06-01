@@ -136,23 +136,3 @@ You will find two files in the dist directory:
 **Description**: The width of the gradient on either side.
 **Default**: `200`
 **Example**: `gradientWidth: '10%'`
-
-### `onFinish` (function)
-
-**Description**: A callback for when the marquee finishes scrolling and stops. Only calls if loop is non-zero.
-**Default**: `null`
-**Example**: `onFinish: () => { console.log('Marquee finished'); }`
-
-### `onCycleComplete` (function)
-
-**Description**: A callback for when the marquee finishes a loop. Does not call if maximum loops are reached (use onFinish instead).
-**Default**: `null`
-**Example**: `onCycleComplete: () => { console.log('Marquee cycle complete'); }`
-
-```
-
-```
-
-```
-
-```
